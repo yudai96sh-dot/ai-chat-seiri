@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プライバシーポリシー | AIチャット整理</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    main {
+      width: min(860px, calc(100% - 32px));
+      margin: 48px auto;
+      padding: 40px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    .service-name {
+      margin: 0 0 32px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    section {
+      padding-top: 24px;
+      margin-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2em;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    strong {
+      color: var(--accent);
+    }
+
+    .note {
+      margin-top: 28px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        margin: 24px auto;
+        padding: 24px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>プライバシーポリシー</h1>
+    <p class="service-name">サービス名：AIチャット整理</p>
+
+    <section>
+      <h2>ユーザーデータの保存について</h2>
+      <p>
+        AIチャット整理では、ユーザーデータを<strong>chrome.storage.localにのみ保存</strong>します。
+        保存されたデータを外部サーバーへ送信することは一切ありません。
+      </p>
+    </section>
+
+    <section>
+      <h2>収集する情報</h2>
+      <p>本サービスが保存する情報は、以下の内容のみです。</p>
+      <ul>
+        <li>フォルダ名、フォルダの色、フォルダの階層構造（サブフォルダ情報）</li>
+        <li>チャットID、チャットタイトル、チャットの所属プラットフォーム（ChatGPT・Claude・Gemini）</li>
+        <li>ブックマーク情報（ブックマークしたチャットのID・タイトル・プラットフォーム）</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>第三者提供について</h2>
+      <p>
+        AIチャット整理は、保存された情報を第三者へ提供することはありません。
+      </p>
+    </section>
+
+    <p class="note">
+      本サービスは、チャット整理機能を提供するために必要な最小限の情報のみを、利用者のブラウザ内に保存します。
+    </p>
+  </main>
+</body>
+</html>
