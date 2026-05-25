@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="google-site-verification" content="dvDJ4pwr8jUk60JgqbZ5XuhUCJc4D5JIGQkZGG3fudk" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon & OG image -->
@@ -10,7 +11,7 @@
   <meta name="twitter:image" content="https://yudai96sh-dot.github.io/ai-chat-seiri/icon.png">
 
   <!-- 基本SEO -->
-  <title>AIチャット整理 — ChatGPT・Claude・GeminiをフォルダでスマートにUIを整理するChrome拡張機能</title>
+  <title>AIチャット整理 — ChatGPT・Claude・Geminiの会話をフォルダで管理するChrome拡張機能</title>
   <meta name="description" content="ChatGPT・Claude・Geminiの会話をフォルダで整理できる無料のChrome拡張機能。色分け・ドラッグ＆ドロップ・検索・ブックマーク機能付き。3サービス横断で管理。日本語対応。">
   <meta name="keywords" content="AIチャット整理, ChatGPT フォルダ, Claude 整理, Gemini 管理, AI 会話 整理, Chrome拡張機能, ChatGPT 整理, AIツール">
   <link rel="canonical" href="https://yudai96sh-dot.github.io/ai-chat-seiri/">
@@ -42,6 +43,63 @@
       "priceCurrency": "JPY"
     },
     "inLanguage": "ja"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "無料で使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。基本機能は完全無料でご利用いただけます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ChatGPT以外のAIサービスでも使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ChatGPT・Claude・Geminiの3サービスに対応しています。3サービスで同じフォルダ構造を共有できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "データはどこに保存されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "すべてのデータはお使いのブラウザ内（chrome.storage.local）にのみ保存されます。外部サーバーへの送信は一切ありません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "インストールにアカウント登録は必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不要です。Chrome Web Storeからインストールするだけでご利用いただけます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ChatGPTのチャット履歴が増えすぎて管理できません。",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AIチャット整理のフォルダ機能で、仕事・学習・プライベートなどテーマ別に整理できます。検索機能でキーワードから目的のチャットを素早く見つけることも可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "PCを変えてもデータは引き継げますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。バックアップ/復元機能でデータをJSONファイルとしてエクスポートできます。新しいPCでインポートするだけで、フォルダ構造をそのまま引き継げます。"
+        }
+      }
+    ]
   }
   </script>
 
@@ -749,6 +807,37 @@
       .showcase-tabs { gap: 8px; }
       .showcase-tab { min-width: 100%; }
     }
+
+    /* ===== FAQ ===== */
+    #faq { padding: 100px 0; }
+    .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .faq-item:hover {
+      border-color: rgba(59,110,248,0.25);
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-item h3 {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+    .faq-item p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+    @media (max-width: 640px) {
+      .faq-item { padding: 18px 20px; }
+    }
   </style>
 </head>
 <body>
@@ -1051,9 +1140,8 @@
         </div>
         <div style="flex:1;background:rgba(0,0,0,0.06);border-radius:5px;height:22px;font-family:var(--font-mono);font-size:10px;color:var(--text-sub);display:flex;align-items:center;padding:0 10px;" aria-hidden="true">youtube.com</div>
       </div>
-      <!-- YouTube URL: 後で差し替え -->
       <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID"
+        src="https://www.youtube.com/embed/Aokgf8cEGNI"
         title="AIチャット整理 使い方デモ動画"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
@@ -1087,6 +1175,49 @@
         <div class="step-title">AIサービスを開く</div>
         <p class="step-desc">ChatGPT・Claude・Geminiを開くと、サイドパネルが自動的に表示されます。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header fade-up" style="text-align:center;">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title" id="faq-heading">よくある質問</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item fade-up">
+        <h3>無料で使えますか？</h3>
+        <p>はい。基本機能は完全無料でご利用いただけます。</p>
+      </div>
+
+      <div class="faq-item fade-up">
+        <h3>ChatGPT以外のAIサービスでも使えますか？</h3>
+        <p>ChatGPT・Claude・Geminiの3サービスに対応しています。3サービスで同じフォルダ構造を共有できます。</p>
+      </div>
+
+      <div class="faq-item fade-up">
+        <h3>データはどこに保存されますか？</h3>
+        <p>すべてのデータはお使いのブラウザ内（chrome.storage.local）にのみ保存されます。外部サーバーへの送信は一切ありません。</p>
+      </div>
+
+      <div class="faq-item fade-up">
+        <h3>インストールにアカウント登録は必要ですか？</h3>
+        <p>不要です。Chrome Web Storeからインストールするだけでご利用いただけます。</p>
+      </div>
+
+      <div class="faq-item fade-up">
+        <h3>ChatGPTのチャット履歴が増えすぎて管理できません。</h3>
+        <p>AIチャット整理のフォルダ機能で、仕事・学習・プライベートなどテーマ別に整理できます。検索機能でキーワードから目的のチャットを素早く見つけることも可能です。</p>
+      </div>
+
+      <div class="faq-item fade-up">
+        <h3>PCを変えてもデータは引き継げますか？</h3>
+        <p>はい。バックアップ/復元機能でデータをJSONファイルとしてエクスポートできます。新しいPCでインポートするだけで、フォルダ構造をそのまま引き継げます。</p>
+      </div>
+
     </div>
   </div>
 </section>

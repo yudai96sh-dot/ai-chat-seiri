@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yudai96sh-dot.github.io/ai-chat-seiri/sitemap.xml
