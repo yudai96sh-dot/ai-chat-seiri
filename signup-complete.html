@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>認証完了 | AIチャット整理</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --subtext: #6b7280;
+      --accent: #4f8ef7;
+      --success: #16a34a;
+      --border: #e5e7eb;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ─────────────────────── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .site-logo {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    .site-logo:hover { color: var(--accent); }
+
+    /* ── Main ───────────────────────── */
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+
+    .card {
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ── Check Icon ─────────────────── */
+    .check-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: popIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.15s;
+    }
+
+    .check-wrap svg .check-line {
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: drawCheck 0.45s ease forwards;
+      animation-delay: 0.52s;
+    }
+
+    /* ── Title ──────────────────────── */
+    .title {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.42s;
+    }
+
+    /* ── Body text ──────────────────── */
+    .body-text {
+      font-size: 15px;
+      color: var(--subtext);
+      line-height: 1.75;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.58s;
+    }
+
+    .body-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── Note ───────────────────────── */
+    .note {
+      font-size: 13px;
+      color: var(--subtext);
+      margin-top: 8px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.65s;
+    }
+
+    /* ── Button ─────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 20px;
+      background: #111827;
+      color: #ffffff;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.72s;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    /* ── Divider ────────────────────── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 36px auto 28px;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.65s;
+    }
+
+    /* ── Close note ─────────────────── */
+    .close-note {
+      font-size: 13px;
+      color: var(--subtext);
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.82s;
+    }
+
+    /* ── Footer ─────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 32px;
+      text-align: center;
+    }
+
+    .site-footer p {
+      font-size: 13px;
+      color: var(--subtext);
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+      animation-delay: 0.9s;
+    }
+
+    /* ── Animations ─────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0%   { opacity: 0; transform: scale(0.80); }
+      65%  { opacity: 1; transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes drawCheck {
+      from { stroke-dashoffset: 40; }
+      to   { stroke-dashoffset: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .site-header { padding: 0 20px; }
+      .main { padding: 60px 20px; }
+      .title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="https://yudai96sh-dot.github.io/ai-chat-seiri/" class="site-logo">AIチャット整理</a>
+  </header>
+
+  <main class="main">
+    <div class="card">
+
+      <!-- Check icon -->
+      <div class="check-wrap">
+        <svg width="72" height="72" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="32" fill="#f0fdf4"/>
+          <circle cx="32" cy="32" r="24" fill="#dcfce7"/>
+          <polyline
+            class="check-line"
+            points="20,33 28,41 44,25"
+            stroke="#16a34a"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+          />
+        </svg>
+      </div>
+
+      <h1 class="title">認証が完了しました</h1>
+
+      <p class="body-text">
+        <strong>AIチャット整理</strong> のアカウント登録が完了しました。
+      </p>
+
+      <p class="body-text">
+        元の画面に戻って、ログインしてください。
+      </p>
+
+      <p class="note">このページは閉じても問題ありません。</p>
+
+      <div class="divider"></div>
+
+      <a href="https://yudai96sh-dot.github.io/ai-chat-seiri/" class="btn">
+        AIチャット整理のホームページへ
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 AIチャット整理</p>
+  </footer>
+
+</body>
+</html>
